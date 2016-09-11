@@ -43,7 +43,13 @@ namespace Crypto_lab_1
             var Ndict         = new Dictionary<List<string>, List<string>>();
             Ndict.Add(Nalp, Nmor);
 
-            textBox1.Text = Ndict.ForEach(delegate (List<string> n1) //(List<string> n2)
+            //textBox1.Text = Ndict.ForEach(delegate (List<string> n1) //(List<string> n2)
+            foreach (var i in Ralp)
+            {
+                txt_b_1.Text += i;
+            }
+
+
         }
     }
 }
