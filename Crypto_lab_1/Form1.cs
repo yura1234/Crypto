@@ -34,19 +34,38 @@ namespace Crypto_lab_1
 
             List<string> Nalp = new List<string> { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0",
                                                    ",", ".", ";", ":", "?", "№", "\"", "'", "()", "!", "-" };
-            
-            List<string> Nmor = new List<string> { ".----", "..---", "...--", "....-", ".....", "-....", "--...", "---..",
+
+            string[] n_arr = new string[]  { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0",
+                                                   ",", ".", ";", ":", "?", "№", "\"", "'", "()", "!", "-" };
+
+            string[] nm_arr = new string[] { ".----", "..---", "...--", "....-", ".....", "-....", "--...", "---..",
                                                    "----.", "-----", ".-.-.-", "......", "-.-.-", "---...", "..--..",
                                                    "-..-.", ".-..-.", ".----.", "-.--.-", "--..--", "-....-" };
 
+            List<string> Nmor = new List<string> { ".----", "..---", "...--", "....-", ".....", "-....", "--...", "---..",
+                                                   "----.", "-----", ".-.-.-", "......", "-.-.-", "---...", "..--..",
+                                                   "-..-.", ".-..-.", ".----.", "-.--.-", "--..--", "-....-" };
+            /*
             var dict          = new Dictionary<List<string>, string>();
             var Ndict         = new Dictionary<List<string>, List<string>>();
-            Ndict.Add(Nalp, Nmor);
+            Ndict.Add(Nalp, Nmor);*/
+
+            var dict = new Dictionary<string, string>();
+            //dict.Add(n_arr, nm_arr);*/
+
+            for (int i = 0; i < n_arr.Length; ++i)
+            {
+                dict.Add(n_arr[i], nm_arr[i]);
+                //for (int j = 0 j < nm_arr.Length; ++j)
+                //{
+                    
+                //}
+            }
 
             //textBox1.Text = Ndict.ForEach(delegate (List<string> n1) //(List<string> n2)
-            foreach (var i in Ralp)
+            foreach (KeyValuePair<string, string> kv in dict)
             {
-                txt_b_1.Text += i;
+                txt_b_1.Text += kv.Key + "      " + kv.Value + "\r\n";
             }
 
 

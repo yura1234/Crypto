@@ -65,6 +65,7 @@
             // 
             // txt_b_1
             // 
+            this.txt_b_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.txt_b_1.Location = new System.Drawing.Point(268, 25);
             this.txt_b_1.Multiline = true;
             this.txt_b_1.Name = "txt_b_1";
