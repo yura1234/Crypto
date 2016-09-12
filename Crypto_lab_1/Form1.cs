@@ -19,21 +19,19 @@ namespace Crypto_lab_1
 
         private void start_Click(object sender, EventArgs e)
         {
-            List<string> Ralp = new List<string> { "А", "Б", "В", "Г", "Д", "Е", "Ж", "З", "И", "Й", "К", "Л",
+            txt_b_2.Clear();
+            string[] Ralp = new string[] { "А", "Б", "В", "Г", "Д", "Е", "Ж", "З", "И", "Й", "К", "Л",
                                                    "М", "Н", "О", "П", "Р", "С", "Т", "У", "Ф", "Х",
                                                    "Ц", "Ч", "Ш", "Щ", "Ы", "Ь", "Э", "Ю", "Я" };
 
-            List<string> Ealp = new List<string> { "A", "B", "W", "G", "D", "E", "V", "Z", "I",
+            string[] Ealp = new string[] { "A", "B", "W", "G", "D", "E", "V", "Z", "I",
                                                    "J", "K", "L", "M", "N", "O", "P", "R", "S", "T", "U",
                                                    "F", "H", "C", "-", "-", "Q", "Y", "X", "-", "-", "-" };
 
-            List<string> sMor = new List<string> { ".-", "-...", ".--", "--.", "-..", ".", "...-", "--..",
+            string[] sMor = new string[] { ".-", "-...", ".--", "--.", "-..", ".", "...-", "--..",
                                                    "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", ".-.",
                                                    "...", "-", "..-", "..-.", "....", "-.-.", "---.", "----", "--.-",
                                                    "-.--", "-..-", "..-..", "..--", ".-.-" };
-
-            List<string> Nalp = new List<string> { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0",
-                                                   ",", ".", ";", ":", "?", "№", "\"", "'", "()", "!", "-" };
 
             string[] n_arr = new string[]  { "1", "2", "3", "4", "5", "6", "7", "8", "9", "0",
                                                    ",", ".", ";", ":", "?", "№", "\"", "'", "()", "!", "-" };
@@ -42,33 +40,27 @@ namespace Crypto_lab_1
                                                    "----.", "-----", ".-.-.-", "......", "-.-.-", "---...", "..--..",
                                                    "-..-.", ".-..-.", ".----.", "-.--.-", "--..--", "-....-" };
 
-            List<string> Nmor = new List<string> { ".----", "..---", "...--", "....-", ".....", "-....", "--...", "---..",
-                                                   "----.", "-----", ".-.-.-", "......", "-.-.-", "---...", "..--..",
-                                                   "-..-.", ".-..-.", ".----.", "-.--.-", "--..--", "-....-" };
-            /*
-            var dict          = new Dictionary<List<string>, string>();
-            var Ndict         = new Dictionary<List<string>, List<string>>();
-            Ndict.Add(Nalp, Nmor);*/
+            var nm_dict = new Dictionary<string, string>();
+            var rm_dict = new Dictionary<string, string>();
+            var em_dict = new Dictionary<string, string>();
 
-            var dict = new Dictionary<string, string>();
-            //dict.Add(n_arr, nm_arr);*/
+            for (int i = 0; i < Ralp.Length; ++i) rm_dict.Add(Ralp[i], sMor[i]);
 
-            for (int i = 0; i < n_arr.Length; ++i)
+            for (int i = 0; i < Ealp.Length; ++i) { if (Ealp[i] == "-") ; else em_dict.Add(Ealp[i], sMor[i]); }
+
+            for (int i = 0; i < n_arr.Length; ++i) nm_dict.Add(n_arr[i], nm_arr[i]);
+
+            string txt = txt_b_1.Text;
+            char[] s = txt.ToCharArray();
+
+            foreach(var i in s)
             {
-                dict.Add(n_arr[i], nm_arr[i]);
-                //for (int j = 0 j < nm_arr.Length; ++j)
-                //{
-                    
-                //}
+                if      (i.ToString() == " ")                         txt_b_2.Text += " ";
+                else if (i.ToString() == "(" || i.ToString() == ")")  txt_b_2.Text += "-.--.-";
+                else if (rm_dict.ContainsKey(i.ToString().ToUpper())) txt_b_2.Text += rm_dict[i.ToString().ToUpper()];
+                else if (em_dict.ContainsKey(i.ToString().ToUpper())) txt_b_2.Text += em_dict[i.ToString().ToUpper()];
+                else if (nm_dict.ContainsKey(i.ToString().ToUpper())) txt_b_2.Text += nm_dict[i.ToString().ToUpper()];
             }
-
-            //textBox1.Text = Ndict.ForEach(delegate (List<string> n1) //(List<string> n2)
-            foreach (KeyValuePair<string, string> kv in dict)
-            {
-                txt_b_1.Text += kv.Key + "      " + kv.Value + "\r\n";
-            }
-
-
         }
     }
 }

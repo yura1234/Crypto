@@ -37,36 +37,36 @@
             // 
             // start
             // 
-            this.start.Location = new System.Drawing.Point(406, 417);
+            this.start.Location = new System.Drawing.Point(762, 417);
             this.start.Name = "start";
             this.start.Size = new System.Drawing.Size(75, 23);
             this.start.TabIndex = 0;
-            this.start.Text = "button1";
+            this.start.Text = "START";
             this.start.UseVisualStyleBackColor = true;
             this.start.Click += new System.EventHandler(this.start_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(265, 9);
+            this.label1.Location = new System.Drawing.Point(613, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(89, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
+            this.label1.Text = "Исходный текст";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(265, 214);
+            this.label2.Location = new System.Drawing.Point(613, 214);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "label2";
+            this.label2.Text = "Морзе";
             // 
             // txt_b_1
             // 
             this.txt_b_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txt_b_1.Location = new System.Drawing.Point(268, 25);
+            this.txt_b_1.Location = new System.Drawing.Point(616, 22);
             this.txt_b_1.Multiline = true;
             this.txt_b_1.Name = "txt_b_1";
             this.txt_b_1.Size = new System.Drawing.Size(346, 174);
@@ -74,7 +74,8 @@
             // 
             // txt_b_2
             // 
-            this.txt_b_2.Location = new System.Drawing.Point(268, 230);
+            this.txt_b_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txt_b_2.Location = new System.Drawing.Point(616, 230);
             this.txt_b_2.Multiline = true;
             this.txt_b_2.Name = "txt_b_2";
             this.txt_b_2.Size = new System.Drawing.Size(346, 181);
@@ -84,7 +85,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(629, 452);
+            this.ClientSize = new System.Drawing.Size(974, 495);
             this.Controls.Add(this.txt_b_2);
             this.Controls.Add(this.txt_b_1);
             this.Controls.Add(this.label2);
